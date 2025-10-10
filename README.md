@@ -1,5 +1,9 @@
 # 📊 Trading Strategy Dashboard
 
+[![Build Status](https://github.com/galafis/trading-dashboard-react/actions/workflows/react-ci.yml/badge.svg)](https://github.com/galafis/trading-dashboard-react/actions/workflows/react-ci.yml)
+[![Codecov](https://codecov.io/gh/galafis/trading-dashboard-react/branch/main/graph/badge.svg?token=bf6f1013-4900-4128-bfbc-e996615dd8ed)](https://codecov.io/gh/galafis/trading-dashboard-react)
+
+
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38bdf8.svg)](https://tailwindcss.com/)
@@ -35,6 +39,7 @@ Modern, responsive dashboard for visualizing trading strategy performance built 
 - **Build Tool**: Vite for fast development and HMR
 - **State Management**: React Context API
 - **HTTP Client**: Axios for API calls
+- **Hooks**: Custom hooks for WebSocket integration and theme management
 
 ### Installation
 
@@ -99,7 +104,7 @@ import { EquityCurve } from './components/EquityCurve';
 ```
 
 #### PerformanceMetrics
-Cards displaying key performance indicators.
+Cards displaying key performance indicators such as Sharpe Ratio, Max Drawdown, Win Rate, and Profit Factor.
 
 ```tsx
 import { PerformanceMetrics } from './components/PerformanceMetrics';
@@ -113,7 +118,7 @@ import { PerformanceMetrics } from './components/PerformanceMetrics';
 ```
 
 #### TradeTable
-Sortable and filterable table of all trades.
+Sortable and filterable table of all trades with detailed information.
 
 ```tsx
 import { TradeTable } from './components/TradeTable';
@@ -126,7 +131,7 @@ import { TradeTable } from './components/TradeTable';
 ```
 
 #### StrategyComparison
-Side-by-side comparison of multiple strategies.
+Side-by-side comparison of multiple strategies based on selected performance metrics.
 
 ```tsx
 import { StrategyComparison } from './components/StrategyComparison';
@@ -135,6 +140,52 @@ import { StrategyComparison } from './components/StrategyComparison';
   strategies={[strategy1, strategy2, strategy3]}
   metrics={['sharpe', 'drawdown', 'return']}
 />
+```
+
+### Hooks
+
+#### useWebSocket
+Custom hook for managing WebSocket connections and real-time data updates.
+
+```typescript
+import { useWebSocket } from './hooks/useWebSocket';
+
+function Dashboard() {
+  const { data, isConnected } = useWebSocket('ws://localhost:8000/ws');
+  
+  useEffect(() => {
+    if (data) {
+      updateEquityCurve(data);
+    }
+  }, [data]);
+  
+  return (
+    <div>
+      <StatusIndicator connected={isConnected} />
+      <EquityCurve data={equityData} />
+    </div>
+  );
+}
+```
+
+#### useTheme
+Custom hook for managing theme switching (light/dark mode).
+
+```typescript
+import { useTheme } from './hooks/useTheme';
+
+function App() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
+      <button onClick={toggleTheme}>
+        Toggle {theme === 'dark' ? 'Light' : 'Dark'} Mode
+      </button>
+      {/* ... rest of your app */}
+    </div>
+  );
+}
 ```
 
 ### API Integration
@@ -157,29 +208,6 @@ const getTradeHistory = async (strategyId: string) => {
   const response = await axios.get(`${API_BASE_URL}/trades/${strategyId}`);
   return response.data;
 };
-```
-
-### WebSocket Real-time Updates
-
-```typescript
-import { useWebSocket } from './hooks/useWebSocket';
-
-function Dashboard() {
-  const { data, isConnected } = useWebSocket('ws://localhost:8000/ws');
-  
-  useEffect(() => {
-    if (data) {
-      updateEquityCurve(data);
-    }
-  }, [data]);
-  
-  return (
-    <div>
-      <StatusIndicator connected={isConnected} />
-      <EquityCurve data={equityData} />
-    </div>
-  );
-}
 ```
 
 ### Customization
@@ -317,3 +345,4 @@ npm run build
 ### Autor
 
 **Gabriel Demetrios Lafis**
+
