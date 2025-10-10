@@ -16,6 +16,16 @@
 
 ## English
 
+### Screenshots
+
+![Trading Dashboard Overview](https://via.placeholder.com/1200x600/1f2937/ffffff?text=Trading+Dashboard+Overview)
+
+*Main dashboard showing equity curve, performance metrics, and trade history*
+
+![Strategy Comparison](https://via.placeholder.com/1200x400/1f2937/ffffff?text=Strategy+Comparison+View)
+
+*Side-by-side comparison of multiple trading strategies*
+
 ### Overview
 
 Modern, responsive dashboard for visualizing trading strategy performance built with React 18, TypeScript, and Recharts. Designed for quantitative traders and portfolio managers to monitor strategy performance, analyze trades, and compare multiple strategies side-by-side.
@@ -60,6 +70,23 @@ npm run build
 # Preview production build
 npm run preview
 ```
+
+### Running Tests
+
+To run the test suite:
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm test -- --watch
+
+# Run tests with coverage
+npm test -- --coverage
+```
+
+All components have comprehensive unit tests to ensure reliability and maintainability.
 
 ### Project Structure
 
