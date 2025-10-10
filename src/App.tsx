@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { EquityCurve } from './components/EquityCurve';
 import { PerformanceMetrics } from './components/PerformanceMetrics';
 import { TradeTable } from './components/TradeTable';
@@ -31,15 +31,18 @@ function App() {
   const { theme, toggleTheme } = useTheme();
   const { data: wsData, isConnected: wsConnected } = useWebSocket('ws://localhost:8000/ws');
 
-  const [equityData, setEquityData] = useState<EquityPoint[]>(sampleEquityData);
+  const [equityData] = useState<EquityPoint[]>(sampleEquityData);
   const [trades, setTrades] = useState<Trade[]>(sampleTrades);
-  const [strategies, setStrategies] = useState<StrategyPerformance[]>(sampleStrategyPerformance);
+  const [strategies] = useState<StrategyPerformance[]>(sampleStrategyPerformance);
 
   // Example of how to use WebSocket data (adjust based on actual data structure)
   useEffect(() => {
     if (wsData) {
       console.log('WebSocket data received:', wsData);
-      // Update state based on wsData, e.g., setEquityData, setTrades
+      // Update state based on wsData
+      // Example: setEquityData(wsData.equity);
+      // Example: setTrades(wsData.trades);
+      // Example: setStrategies(wsData.strategies);
     }
   }, [wsData]);
 

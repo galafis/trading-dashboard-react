@@ -6,14 +6,12 @@ interface EquityCurveProps {
   data: EquityPoint[];
   height?: number;
   showGrid?: boolean;
-  enableZoom?: boolean;
 }
 
 export const EquityCurve: React.FC<EquityCurveProps> = ({ 
   data, 
   height = 400, 
-  showGrid = true,
-  enableZoom = false 
+  showGrid = true
 }) => {
   const chartData = data.map(point => ({
     timestamp: point.timestamp.toLocaleDateString(),
