@@ -1,4 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react';
+import { renderHook, waitFor, act } from '@testing-library/react';
 import { useWebSocket } from './useWebSocket';
 
 // Mock WebSocket
@@ -29,7 +29,7 @@ class MockWebSocket {
     this.onclose?.();
   }
 
-  send(data: string) {
+  send(_data: string) {
     // Mock send
   }
 }
@@ -115,17 +115,10 @@ describe('useWebSocket', () => {
 });
 
 // Helper to track WebSocket instances
-let lastInstance: MockWebSocket | null = null;
-
 const OriginalMockWebSocket = MockWebSocket;
 global.WebSocket = class extends OriginalMockWebSocket {
   constructor(url: string) {
     super(url);
-    lastInstance = this;
     (global.WebSocket as any).lastInstance = this;
   }
 } as any;
-
-function act(callback: () => void) {
-  callback();
-}
