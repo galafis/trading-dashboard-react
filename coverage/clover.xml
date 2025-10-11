@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1760062407446" clover="3.2.0">
-  <project timestamp="1760062407446" name="All files">
+<coverage generated="1760142962912" clover="3.2.0">
+  <project timestamp="1760142962912" name="All files">
     <metrics statements="28" coveredstatements="23" conditionals="6" coveredconditionals="5" methods="16" coveredmethods="11" elements="50" coveredelements="39" complexity="0" loc="28" ncloc="28" packages="1" files="4" classes="4"/>
-    <file name="EquityCurve.tsx" path="/home/ubuntu/trading-dashboard-react/src/components/EquityCurve.tsx">
+    <file name="EquityCurve.tsx" path="/home/runner/work/trading-dashboard-react/trading-dashboard-react/src/components/EquityCurve.tsx">
       <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
@@ -10,13 +10,13 @@
       <line num="16" count="3" type="stmt"/>
       <line num="21" count="1" type="stmt"/>
     </file>
-    <file name="PerformanceMetrics.tsx" path="/home/ubuntu/trading-dashboard-react/src/components/PerformanceMetrics.tsx">
+    <file name="PerformanceMetrics.tsx" path="/home/runner/work/trading-dashboard-react/trading-dashboard-react/src/components/PerformanceMetrics.tsx">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="10" count="1" type="stmt"/>
       <line num="16" count="1" type="stmt"/>
     </file>
-    <file name="StrategyComparison.tsx" path="/home/ubuntu/trading-dashboard-react/src/components/StrategyComparison.tsx">
+    <file name="StrategyComparison.tsx" path="/home/runner/work/trading-dashboard-react/trading-dashboard-react/src/components/StrategyComparison.tsx">
       <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
       <line num="1" count="1" type="stmt"/>
       <line num="9" count="1" type="stmt"/>
@@ -25,7 +25,7 @@
       <line num="30" count="2" type="stmt"/>
       <line num="33" count="6" type="stmt"/>
     </file>
-    <file name="TradeTable.tsx" path="/home/ubuntu/trading-dashboard-react/src/components/TradeTable.tsx">
+    <file name="TradeTable.tsx" path="/home/runner/work/trading-dashboard-react/trading-dashboard-react/src/components/TradeTable.tsx">
       <metrics statements="14" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="4"/>
       <line num="1" count="1" type="stmt"/>
       <line num="10" count="1" type="stmt"/>
