@@ -12,6 +12,11 @@ describe('TradeTable', () => {
   const mockOnSort = jest.fn();
   const mockOnFilter = jest.fn();
 
+  beforeEach(() => {
+    mockOnSort.mockClear();
+    mockOnFilter.mockClear();
+  });
+
   it('should render without crashing and display trade data', () => {
     render(<TradeTable trades={mockTrades} onSort={mockOnSort} onFilter={mockOnFilter} />);
 
@@ -33,6 +38,39 @@ describe('TradeTable', () => {
     const filterInput = screen.getByPlaceholderText('Filter trades...');
     fireEvent.change(filterInput, { target: { value: 'AAPL' } });
     expect(mockOnFilter).toHaveBeenCalledWith('AAPL');
+  });
+
+  it('should call onSort for all table headers', () => {
+    render(<TradeTable trades={mockTrades} onSort={mockOnSort} onFilter={mockOnFilter} />);
+    
+    fireEvent.click(screen.getByText('ID'));
+    expect(mockOnSort).toHaveBeenCalledWith('id');
+    
+    fireEvent.click(screen.getByText('Type'));
+    expect(mockOnSort).toHaveBeenCalledWith('type');
+    
+    fireEvent.click(screen.getByText('Entry Price'));
+    expect(mockOnSort).toHaveBeenCalledWith('entryPrice');
+    
+    fireEvent.click(screen.getByText('Exit Price'));
+    expect(mockOnSort).toHaveBeenCalledWith('exitPrice');
+    
+    fireEvent.click(screen.getByText('Profit'));
+    expect(mockOnSort).toHaveBeenCalledWith('profit');
+  });
+
+  it('should display empty table when no trades provided', () => {
+    render(<TradeTable trades={[]} onSort={mockOnSort} onFilter={mockOnFilter} />);
+    expect(screen.getByText('Trade History')).toBeInTheDocument();
+    expect(screen.queryByText('AAPL')).not.toBeInTheDocument();
+  });
+
+  it('should update filter text when typing', () => {
+    render(<TradeTable trades={mockTrades} onSort={mockOnSort} onFilter={mockOnFilter} />);
+    const filterInput = screen.getByPlaceholderText('Filter trades...') as HTMLInputElement;
+    
+    fireEvent.change(filterInput, { target: { value: 'TEST' } });
+    expect(filterInput.value).toBe('TEST');
   });
 });
 

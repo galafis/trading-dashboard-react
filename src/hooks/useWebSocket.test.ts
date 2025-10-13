@@ -29,7 +29,7 @@ class MockWebSocket {
     this.onclose?.();
   }
 
-  send(data: string) {
+  send(_data: string) {
     // Mock send
   }
 }
@@ -115,13 +115,10 @@ describe('useWebSocket', () => {
 });
 
 // Helper to track WebSocket instances
-let lastInstance: MockWebSocket | null = null;
-
 const OriginalMockWebSocket = MockWebSocket;
 global.WebSocket = class extends OriginalMockWebSocket {
   constructor(url: string) {
     super(url);
-    lastInstance = this;
     (global.WebSocket as any).lastInstance = this;
   }
 } as any;
