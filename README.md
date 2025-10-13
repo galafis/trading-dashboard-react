@@ -18,25 +18,11 @@
 
 ### Screenshots
 
+![Trading Dashboard Main View](https://github.com/user-attachments/assets/a1d315ff-95ff-4595-895c-14f83b70f973)
 
+*Overview of the dashboard showing equity curve, performance metrics, and trade history*
 
-<!-- Insira aqui a imagem da comparação de estratégias -->
-
-*Comparação lado a lado de múltiplas estratégias de trading*
-
-<!-- Insira aqui a imagem da comparação de estratégias -->
-
-*Comparação lado a lado de múltiplas estratégias d### Screenshots
-
-<!-- Insira aqui a imagem do dashboard principal -->
-
-*Visão geral do dashboard mostrando a curva de equity, métricas de desempenho e histórico de trades*
-
-<!-- Insira aqui a imagem da comparação de estratégias -->
-
-*Comparação lado a lado de múltiplas estratégias de trading*
-
- Overview
+### Overview
 
 Modern, responsive dashboard for visualizing trading strategy performance built with React 18, TypeScript, and Recharts. Designed for quantitative traders and portfolio managers to monitor strategy performance, analyze trades, and compare multiple strategies side-by-side.
 
@@ -341,13 +327,9 @@ MIT License
 
 ### Screenshots
 
-<!-- Insira aqui a imagem do dashboard principal -->
+![Visão Principal do Dashboard de Trading](https://github.com/user-attachments/assets/a1d315ff-95ff-4595-895c-14f83b70f973)
 
 *Visão geral do dashboard mostrando a curva de equity, métricas de desempenho e histórico de trades*
-
-<!-- Insira aqui a imagem da comparação de estratégias -->
-
-*Comparação lado a lado de múltiplas estratégias de trading*
 
 ### Visão Geral
 
@@ -364,6 +346,16 @@ Dashboard moderno e responsivo para visualização de performance de estratégia
 - **Exportação de Dados**: Exportar gráficos e dados para CSV/PNG
 - **Suporte WebSocket**: Atualizações de dados em tempo real
 
+### Stack Tecnológico
+
+- **Frontend**: React 18 com TypeScript
+- **Gráficos**: Recharts para visualização de dados
+- **Estilização**: TailwindCSS para design responsivo
+- **Build Tool**: Vite para desenvolvimento rápido e HMR
+- **Gerenciamento de Estado**: React Context API
+- **Cliente HTTP**: Axios para chamadas de API
+- **Hooks**: Hooks customizados para integração WebSocket e gerenciamento de tema
+
 ### Instalação
 
 ```bash
@@ -379,7 +371,215 @@ npm run dev
 
 # Build para produção
 npm run build
+
+# Pré-visualizar build de produção
+npm run preview
 ```
+
+### Executando Testes
+
+Para executar a suíte de testes:
+
+```bash
+# Executar todos os testes
+npm test
+
+# Executar testes em modo watch
+npm test -- --watch
+
+# Executar testes com cobertura
+npm test -- --coverage
+```
+
+Todos os componentes possuem testes unitários abrangentes para garantir confiabilidade e manutenibilidade.
+
+### Estrutura do Projeto
+
+```
+trading-dashboard-react/
+├── src/
+│   ├── components/
+│   │   ├── EquityCurve.tsx
+│   │   ├── PerformanceMetrics.tsx
+│   │   ├── TradeTable.tsx
+│   │   └── StrategyComparison.tsx
+│   ├── hooks/
+│   │   ├── useWebSocket.ts
+│   │   └── useTheme.ts
+│   ├── types/
+│   │   └── trading.ts
+│   ├── utils/
+│   │   └── calculations.ts
+│   ├── App.tsx
+│   └── main.tsx
+├── public/
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── tailwind.config.js
+```
+
+### Componentes
+
+#### EquityCurve
+Gráfico de linha interativo exibindo o valor do portfólio ao longo do tempo.
+
+```tsx
+import { EquityCurve } from './components/EquityCurve';
+
+<EquityCurve 
+  data={equityData}
+  height={400}
+  showGrid={true}
+  enableZoom={true}
+/>
+```
+
+#### PerformanceMetrics
+Cards exibindo indicadores chave de performance como Índice de Sharpe, Drawdown Máximo, Taxa de Acerto e Fator de Lucro.
+
+```tsx
+import { PerformanceMetrics } from './components/PerformanceMetrics';
+
+<PerformanceMetrics 
+  sharpeRatio={1.85}
+  maxDrawdown={-0.15}
+  winRate={0.62}
+  profitFactor={2.1}
+/>
+```
+
+#### TradeTable
+Tabela ordenável e filtrável de todos os trades com informações detalhadas.
+
+```tsx
+import { TradeTable } from './components/TradeTable';
+
+<TradeTable 
+  trades={tradeHistory}
+  onSort={handleSort}
+  onFilter={handleFilter}
+/>
+```
+
+#### StrategyComparison
+Comparação lado a lado de múltiplas estratégias baseada em métricas de performance selecionadas.
+
+```tsx
+import { StrategyComparison } from './components/StrategyComparison';
+
+<StrategyComparison 
+  strategies={[strategy1, strategy2, strategy3]}
+  metrics={['sharpe', 'drawdown', 'return']}
+/>
+```
+
+### Hooks
+
+#### useWebSocket
+Hook customizado para gerenciar conexões WebSocket e atualizações de dados em tempo real.
+
+```typescript
+import { useWebSocket } from './hooks/useWebSocket';
+
+function Dashboard() {
+  const { data, isConnected } = useWebSocket('ws://localhost:8000/ws');
+  
+  useEffect(() => {
+    if (data) {
+      updateEquityCurve(data);
+    }
+  }, [data]);
+  
+  return (
+    <div>
+      <StatusIndicator connected={isConnected} />
+      <EquityCurve data={equityData} />
+    </div>
+  );
+}
+```
+
+#### useTheme
+Hook customizado para gerenciar alternância de tema (modo claro/escuro).
+
+```typescript
+import { useTheme } from './hooks/useTheme';
+
+function App() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
+      <button onClick={toggleTheme}>
+        Alternar Modo {theme === 'dark' ? 'Claro' : 'Escuro'}
+      </button>
+      {/* ... resto da aplicação */}
+    </div>
+  );
+}
+```
+
+### Integração com API
+
+Conecte à sua API de análise quantitativa:
+
+```typescript
+import axios from 'axios';
+
+const API_BASE_URL = 'http://localhost:8000';
+
+// Buscar performance da estratégia
+const getStrategyPerformance = async (strategyId: string) => {
+  const response = await axios.get(`${API_BASE_URL}/strategies/${strategyId}`);
+  return response.data;
+};
+
+// Buscar histórico de trades
+const getTradeHistory = async (strategyId: string) => {
+  const response = await axios.get(`${API_BASE_URL}/trades/${strategyId}`);
+  return response.data;
+};
+```
+
+### Personalização
+
+#### Configuração de Tema
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#3b82f6',
+        success: '#10b981',
+        danger: '#ef4444',
+      }
+    }
+  }
+}
+```
+
+#### Estilização de Gráficos
+
+```tsx
+<EquityCurve 
+  data={data}
+  colors={{
+    line: '#3b82f6',
+    grid: '#e5e7eb',
+    tooltip: '#1f2937'
+  }}
+/>
+```
+
+### Otimização de Performance
+
+- **Code Splitting**: Carregamento lazy de componentes
+- **Memoização**: React.memo para componentes custosos
+- **Virtual Scrolling**: Para tabelas de trades grandes
+- **Debouncing**: Para operações de busca e filtro
 
 ### Casos de Uso
 
@@ -389,7 +589,45 @@ npm run build
 - **Análise de Risco**: Analisar drawdowns e métricas de risco
 - **Pesquisa**: Comparar variações de estratégia
 
+### Deploy
+
+#### Vercel
+```bash
+npm run build
+vercel --prod
+```
+
+#### Netlify
+```bash
+npm run build
+netlify deploy --prod --dir=dist
+```
+
+#### Docker
+```dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "run", "preview"]
+```
+
+### Suporte de Navegadores
+
+- Chrome/Edge (última versão)
+- Firefox (última versão)
+- Safari (última versão)
+- Navegadores móveis (iOS Safari, Chrome Mobile)
+
+### Licença
+
+Licença MIT
+
 ### Autor
 
 **Gabriel Demetrios Lafis**
+
 
