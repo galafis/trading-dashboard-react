@@ -9,7 +9,9 @@ export const useWebSocket = (url: string) => {
     ws.current = new WebSocket(url);
 
     ws.current.onopen = () => {
-      console.log('WebSocket connected');
+      if (process.env.NODE_ENV === 'development') {
+        console.log('WebSocket connected');
+      }
       setIsConnected(true);
     };
 
@@ -18,7 +20,9 @@ export const useWebSocket = (url: string) => {
     };
 
     ws.current.onclose = () => {
-      console.log('WebSocket disconnected');
+      if (process.env.NODE_ENV === 'development') {
+        console.log('WebSocket disconnected');
+      }
       setIsConnected(false);
     };
 

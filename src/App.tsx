@@ -38,7 +38,6 @@ function App() {
   // Example of how to use WebSocket data (adjust based on actual data structure)
   useEffect(() => {
     if (wsData) {
-      console.log('WebSocket data received:', wsData);
       // Update state based on wsData
       // Example: setEquityData(wsData.equity);
       // Example: setTrades(wsData.trades);

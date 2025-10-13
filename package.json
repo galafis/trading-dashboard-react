@@ -2,15 +2,48 @@
   "name": "trading-dashboard-react",
   "version": "1.0.0",
   "type": "module",
-  "description": "Modern trading strategy dashboard",
+  "description": "Modern trading strategy dashboard for visualizing performance, analyzing trades, and comparing strategies",
   "author": "Gabriel Demetrios Lafis",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/galafis/trading-dashboard-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/galafis/trading-dashboard-react/issues"
+  },
+  "homepage": "https://github.com/galafis/trading-dashboard-react#readme",
+  "keywords": [
+    "trading",
+    "dashboard",
+    "react",
+    "typescript",
+    "backtesting",
+    "quantitative-trading",
+    "strategy-analysis",
+    "performance-metrics",
+    "recharts",
+    "tailwindcss",
+    "websocket",
+    "real-time"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest",
-    "lint": "eslint src --ext .ts,.tsx"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\"",
+    "analyze": "vite build --mode analyze"
   },
   "dependencies": {
     "axios": "^1.7.0",
@@ -35,6 +68,7 @@
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
     "postcss": "^8.4.0",
+    "prettier": "^3.6.2",
     "tailwindcss": "^3.4.0",
     "ts-jest": "^29.4.4",
     "typescript": "^5.5.0",
