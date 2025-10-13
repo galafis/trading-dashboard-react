@@ -4,18 +4,42 @@ This directory contains examples of how to integrate the Trading Dashboard with 
 
 ## Contents
 
-1. [REST API Integration](./rest-api-integration.md)
-2. [WebSocket Integration](./websocket-integration.md)
-3. [Python Backend Example](./python-backend-example.py)
-4. [Real-time Data Streaming](./real-time-streaming.md)
+1. [Python Backend Example](./python-backend-example.py) - Flask implementation
+2. [Node.js Backend Example](./nodejs-backend-example.ts) - Express/TypeScript implementation
+3. REST API Integration Guide
+4. WebSocket Integration Guide
+5. Real-time Data Streaming Examples
 
 ## Quick Start
 
 ### Python Backend with Flask
 
-See [python-backend-example.py](./python-backend-example.py) for a complete Flask backend implementation.
+See [python-backend-example.py](./python-backend-example.py) for a complete Flask backend implementation with:
+- REST API endpoints
+- WebSocket support with Flask-SocketIO
+- CORS configuration
+- Sample data generation
+
+**Installation:**
+```bash
+pip install flask flask-cors flask-socketio
+python python-backend-example.py
+```
 
 ### Node.js Backend with Express
+
+See [nodejs-backend-example.ts](./nodejs-backend-example.ts) for a complete Express backend with TypeScript:
+- REST API endpoints
+- Native WebSocket support
+- Type-safe implementation
+- Real-time updates
+
+**Installation:**
+```bash
+npm install express cors ws
+npm install --save-dev @types/express @types/cors @types/ws typescript tsx
+npx tsx nodejs-backend-example.ts
+```
 
 ```javascript
 const express = require('express');
