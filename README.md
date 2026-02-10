@@ -1,9 +1,5 @@
 # 📊 Trading Strategy Dashboard
 
-[![Build Status](https://github.com/galafis/trading-dashboard-react/actions/workflows/react-ci.yml/badge.svg)](https://github.com/galafis/trading-dashboard-react/actions/workflows/react-ci.yml)
-[![Codecov](https://codecov.io/gh/galafis/trading-dashboard-react/branch/main/graph/badge.svg?token=bf6f1013-4900-4128-bfbc-e996615dd8ed)](https://codecov.io/gh/galafis/trading-dashboard-react)
-
-
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38bdf8.svg)](https://tailwindcss.com/)
