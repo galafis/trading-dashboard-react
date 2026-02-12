@@ -1,81 +1,79 @@
-# Trading Strategy Dashboard - Complete Project Overview
+# Trading Strategy Dashboard - Project Overview
 
-## 🎯 Project Status: Production Ready
+## Project Status
 
-This project is **100% complete, tested, and production-ready** with comprehensive documentation.
+The dashboard is functional and includes documentation in English and Portuguese.
 
-## 📊 Key Metrics
+## Key Metrics
 
-- **Test Coverage**: 100% (40 tests passing)
-- **Build Status**: ✅ Success
-- **TypeScript**: ✅ No errors
-- **Documentation**: ✅ Complete (English & Portuguese)
-- **Code Quality**: ✅ ESLint configured
+- **Tests**: 40 tests across 7 suites (all passing)
+- **Statement Coverage**: 100%
+- **Branch Coverage**: ~94%
+- **TypeScript**: Strict mode enabled, no errors
+- **Documentation**: English & Portuguese
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 trading-dashboard-react/
-├── 📄 Configuration Files
-│   ├── package.json (type: module, all scripts working)
-│   ├── tsconfig.json (strict TypeScript)
-│   ├── vite.config.ts (optimized build)
-│   ├── tailwind.config.js (custom theme)
-│   ├── jest.config.cjs (100% coverage)
-│   ├── .eslintrc.json (code quality)
-│   └── .gitignore (properly configured)
+├── Configuration
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── vite.config.ts
+│   ├── tailwind.config.js
+│   ├── jest.config.cjs
+│   ├── .eslintrc.json
+│   └── .gitignore
 │
-├── 📚 Documentation
-│   ├── README.md (Complete bilingual guide)
-│   ├── CHANGELOG.md (Version history)
-│   ├── CONTRIBUTING.md (Contribution guidelines)
-│   ├── SECURITY.md (Security policy)
+├── Documentation
+│   ├── README.md
+│   ├── CONTRIBUTING.md
+│   ├── SECURITY.md
 │   ├── docs/
-│   │   ├── API.md (Complete API reference)
-│   │   ├── DEPLOYMENT.md (Multi-platform deployment)
-│   │   ├── TROUBLESHOOTING.md (Problem resolution)
+│   │   ├── API.md
+│   │   ├── DEPLOYMENT.md
+│   │   ├── TROUBLESHOOTING.md
 │   │   └── images/
 │   │       └── dashboard-main-view.png
 │   └── examples/
-│       ├── README.md (Integration examples)
-│       └── python-backend-example.py (Flask backend)
+│       ├── README.md
+│       └── python-backend-example.py
 │
-├── 💻 Source Code
+├── Source Code
 │   ├── src/
-│   │   ├── components/ (4 fully tested components)
-│   │   │   ├── EquityCurve.tsx (Interactive chart)
-│   │   │   ├── PerformanceMetrics.tsx (KPIs display)
-│   │   │   ├── TradeTable.tsx (Sortable table)
-│   │   │   └── StrategyComparison.tsx (Multi-strategy)
-│   │   ├── hooks/ (2 custom hooks)
-│   │   │   ├── useWebSocket.ts (Real-time data)
-│   │   │   └── useTheme.ts (Dark mode)
+│   │   ├── components/
+│   │   │   ├── EquityCurve.tsx
+│   │   │   ├── PerformanceMetrics.tsx
+│   │   │   ├── TradeTable.tsx
+│   │   │   └── StrategyComparison.tsx
+│   │   ├── hooks/
+│   │   │   ├── useWebSocket.ts
+│   │   │   └── useTheme.ts
 │   │   ├── utils/
-│   │   │   └── calculations.ts (Financial metrics)
+│   │   │   └── calculations.ts
 │   │   ├── types/
-│   │   │   └── trading.ts (TypeScript definitions)
-│   │   ├── App.tsx (Main application)
-│   │   ├── main.tsx (Entry point)
+│   │   │   └── trading.ts
+│   │   ├── App.tsx
+│   │   ├── main.tsx
 │   │   ├── App.css
 │   │   └── index.css
-│   │
-├── 🧪 Tests (100% Coverage)
-│   ├── src/components/*.test.tsx (4 test files)
-│   ├── src/hooks/*.test.ts (2 test files)
-│   ├── src/utils/*.test.ts (1 test file)
+│
+├── Tests
+│   ├── src/components/*.test.tsx (4 files)
+│   ├── src/hooks/*.test.ts (2 files)
+│   ├── src/utils/*.test.ts (1 file)
 │   └── setupTests.ts
 │
-├── 🎨 Assets
+├── Assets
 │   └── public/
-│       └── favicon.svg (Custom trading icon)
+│       └── favicon.svg
 │
-└── 📦 Build Output
-    └── dist/ (Production-ready build)
+└── Build Output
+    └── dist/
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
-### Installation
 ```bash
 git clone https://github.com/galafis/trading-dashboard-react.git
 cd trading-dashboard-react
@@ -83,6 +81,7 @@ npm install
 ```
 
 ### Development
+
 ```bash
 npm run dev          # Start dev server (http://localhost:5173)
 npm test            # Run tests
@@ -91,39 +90,38 @@ npm run build       # Build for production
 npm run preview     # Preview production build
 ```
 
-## 🎨 Features
+## Features
 
 ### Components
-- ✅ **EquityCurve**: Interactive line chart with Recharts
-- ✅ **PerformanceMetrics**: Sharpe, Drawdown, Win Rate, Profit Factor
-- ✅ **TradeTable**: Sortable, filterable trade history
-- ✅ **StrategyComparison**: Side-by-side strategy analysis
+- **EquityCurve**: Interactive line chart with Recharts
+- **PerformanceMetrics**: Sharpe ratio, drawdown, win rate, profit factor
+- **TradeTable**: Sortable, filterable trade history
+- **StrategyComparison**: Side-by-side strategy analysis
 
 ### Functionality
-- ✅ **Real-time updates**: WebSocket integration
-- ✅ **Dark mode**: Theme switching
-- ✅ **Responsive design**: Mobile-first approach
-- ✅ **Type safety**: Full TypeScript support
-- ✅ **Performance**: Optimized with React.memo and useMemo
+- **Real-time updates**: WebSocket integration
+- **Dark mode**: Theme switching
+- **Responsive design**: Mobile-first approach with TailwindCSS
+- **Type safety**: Full TypeScript support
+- **Memoization**: React.memo and useMemo for performance
 
-## 📖 Documentation
+## Documentation
 
 ### For Users
-- **[README.md](./README.md)**: Complete installation and usage guide
-- **[API.md](./docs/API.md)**: API endpoints and WebSocket integration
-- **[DEPLOYMENT.md](./docs/DEPLOYMENT.md)**: Deploy to Vercel, Netlify, Docker, AWS
+- [README.md](./README.md) — Installation and usage guide
+- [API.md](./docs/API.md) — API endpoints and WebSocket integration
+- [DEPLOYMENT.md](./docs/DEPLOYMENT.md) — Deploy to Vercel, Netlify, Docker, AWS
 
 ### For Developers
-- **[CONTRIBUTING.md](./CONTRIBUTING.md)**: How to contribute
-- **[TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md)**: Common issues and solutions
-- **[examples/](./examples/)**: Backend integration examples
+- [CONTRIBUTING.md](./CONTRIBUTING.md) — How to contribute
+- [TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md) — Common issues and solutions
+- [examples/](./examples/) — Backend integration examples
 
-### For Security
-- **[SECURITY.md](./SECURITY.md)**: Security policy and best practices
+### Security
+- [SECURITY.md](./SECURITY.md) — Security policy and best practices
 
-## 🧪 Testing
+## Test Coverage
 
-### Coverage Report
 ```
 File                     | % Stmts | % Branch | % Funcs | % Lines
 -------------------------|---------|----------|---------|----------
@@ -140,179 +138,64 @@ All files                |     100 |    94.28 |     100 |     100
   calculations.ts        |     100 |       96 |     100 |     100
 ```
 
-### Test Suites
-- ✅ 7 test suites (all passing)
-- ✅ 40 tests (all passing)
-- ✅ Component tests
-- ✅ Hook tests
-- ✅ Utility tests
+7 test suites, 40 tests (all passing).
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend
-- **React 18**: Latest React features
-- **TypeScript 5**: Type safety
-- **Vite 5**: Fast build tool
-- **TailwindCSS 3**: Utility-first CSS
-- **Recharts 2**: Chart library
+- React 18
+- TypeScript 5
+- Vite 5
+- TailwindCSS 3
+- Recharts 2
 
 ### Development
-- **Jest**: Testing framework
-- **Testing Library**: React testing utilities
-- **ESLint**: Code linting
-- **Prettier**: Code formatting (via ESLint)
+- Jest (testing framework)
+- Testing Library (React testing utilities)
+- ESLint (linting)
 
-### Tools
-- **Axios**: HTTP client
-- **WebSocket API**: Real-time communication
+### Libraries
+- Axios (HTTP client)
+- WebSocket API (real-time communication)
 
-## 🌐 Browser Support
+## Browser Support
 
-- ✅ Chrome/Edge (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 📦 Deployment Options
+## Deployment
 
-### Supported Platforms
-- ✅ **Vercel**: One-click deploy
-- ✅ **Netlify**: GitHub integration
-- ✅ **Docker**: Containerized deployment
-- ✅ **AWS**: S3 + CloudFront
-- ✅ **Any static host**: GitHub Pages, etc.
+Deployment guides available for:
+- Vercel
+- Netlify
+- Docker
+- AWS (S3 + CloudFront)
+- Any static file host
 
-### CI/CD
-- GitHub Actions workflow ready
-- Automated testing
-- Automated deployment
-- Environment variable management
+See [DEPLOYMENT.md](./docs/DEPLOYMENT.md) for details.
 
-## 🔒 Security
+## Security
 
-- ✅ Security policy documented
-- ✅ HTTPS recommended
-- ✅ WSS for WebSocket
-- ✅ Environment variables for secrets
-- ✅ CORS configuration
-- ✅ CSP headers recommended
-- ✅ Regular dependency updates
+- Security policy documented
+- HTTPS recommended for production
+- WSS for WebSocket connections
+- Environment variables for secrets
+- CORS configuration guidance included
 
-## 📈 Performance
+## Contributing
 
-### Optimizations
-- Code splitting ready
-- React.memo for expensive components
-- useMemo for expensive calculations
-- Lazy loading capability
-- Production build optimized
-- Gzip compression ready
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for development setup, coding standards, and pull request guidelines.
 
-### Bundle Size
-- Main bundle: ~534 KB (minified)
-- Gzipped: ~153 KB
-- Can be improved with code splitting
+## License
 
-## 🎓 Learning Resources
+MIT License — see [LICENSE](./LICENSE).
 
-### Documentation Included
-1. **API Integration Guide**: Examples with Python Flask and Node.js
-2. **Deployment Guide**: Step-by-step for major platforms
-3. **Troubleshooting Guide**: Common issues and solutions
-4. **Component Usage**: Detailed examples for each component
-5. **Hook Documentation**: Custom hooks explained
-6. **Type Definitions**: TypeScript interfaces documented
-
-## 🤝 Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for:
-- Development setup
-- Coding standards
-- Pull request process
-- Testing requirements
-- Documentation guidelines
-
-## 📝 License
-
-MIT License - See [LICENSE](./LICENSE) file
-
-## 👤 Author
+## Author
 
 **Gabriel Demetrios Lafis**
 
-## 🆘 Support
-
-- **Issues**: [GitHub Issues](https://github.com/galafis/trading-dashboard-react/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/galafis/trading-dashboard-react/discussions)
-- **Documentation**: Check [docs/](./docs/) directory
-
-## ✅ Quality Checklist
-
-- [x] All components tested (100% coverage)
-- [x] All hooks tested (100% coverage)
-- [x] All utilities tested (100% coverage)
-- [x] TypeScript strict mode enabled
-- [x] No TypeScript errors
-- [x] ESLint configured
-- [x] Build successful
-- [x] Documentation complete (EN + PT-BR)
-- [x] Examples provided
-- [x] Security documented
-- [x] Deployment guides ready
-- [x] Troubleshooting guide available
-- [x] API documented
-- [x] Screenshot included
-- [x] Favicon customized
-- [x] Git ignore configured
-- [x] Package.json optimized
-
-## 🎉 Project Highlights
-
-1. **100% Test Coverage**: Every line of code is tested
-2. **Bilingual Documentation**: Complete docs in English and Portuguese
-3. **Production Ready**: Fully functional with no known issues
-4. **Comprehensive Examples**: Flask backend example included
-5. **Multiple Deployment Options**: Vercel, Netlify, Docker, AWS
-6. **Type Safe**: Full TypeScript with strict mode
-7. **Modern Stack**: Latest versions of React, Vite, TypeScript
-8. **Performance Optimized**: Fast build times, optimized bundles
-9. **Well Documented**: API, deployment, troubleshooting guides
-10. **Professional Quality**: Following industry best practices
-
-## 🔄 Recent Updates
-
-### Latest Changes (2024-10-13)
-- ✅ Fixed all TypeScript build errors
-- ✅ Improved test coverage to 100%
-- ✅ Added ESLint configuration
-- ✅ Created custom favicon
-- ✅ Added comprehensive documentation
-- ✅ Created deployment guides
-- ✅ Added API documentation
-- ✅ Created troubleshooting guide
-- ✅ Added backend integration examples
-- ✅ Updated README with screenshot
-- ✅ Completed Portuguese translation
-
-## 📞 Next Steps for Users
-
-1. **Clone and install**: Follow Quick Start above
-2. **Read documentation**: Start with [README.md](./README.md)
-3. **Try examples**: Check [examples/](./examples/) directory
-4. **Deploy**: Follow [DEPLOYMENT.md](./docs/DEPLOYMENT.md)
-5. **Customize**: Modify components and styles as needed
-
-## 🎯 Project Goals Achieved
-
-- ✅ Modern, production-ready trading dashboard
-- ✅ Fully tested and documented
-- ✅ Easy to deploy and customize
-- ✅ Type-safe and performant
-- ✅ Developer-friendly with examples
-- ✅ Comprehensive guides for all aspects
-
 ---
 
-**Status**: ✅ Complete and Production Ready  
-**Version**: 1.0.0  
-**Last Updated**: 2024-10-13
+**Version**: 1.0.0

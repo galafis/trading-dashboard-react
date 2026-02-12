@@ -206,7 +206,6 @@ describe('MyComponent', () => {
    - Provide a clear title and description
    - Reference any related issues
    - Include screenshots for UI changes
-   - Ensure all CI checks pass
 
 ## Reporting Bugs
 
@@ -240,4 +239,4 @@ If you have questions about contributing, feel free to:
 - Contact the maintainers
 - Check existing issues and pull requests
 
-Thank you for contributing to the Trading Strategy Dashboard! 🚀
+Thank you for contributing to the Trading Strategy Dashboard!
